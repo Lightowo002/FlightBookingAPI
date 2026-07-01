@@ -35,7 +35,8 @@ builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("EmailSettings")
 );
 
-builder.Services.AddSingleton<EmailService>();
+// Cambia AddSingleton por AddTransient
+builder.Services.AddTransient<EmailService>();
 
 var app = builder.Build();
 
